@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Habit Tracker</title>
+
+    <link rel="icon" href="icon.png">
+
+    <link rel="stylesheet" href="page.css">
+
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+    <!-- =========================================
+         MONTH HEADER
+    ========================================== -->
+
+    <div class="header">
+
+        <div class="month-navigation">
+
+            <button class="previous-month">
+                ◀
+            </button>
+
+
+            <h1 class="current-month">
+                October 2026
+            </h1>
+
+
+            <button class="next-month">
+                ▶
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         TOP SECTION
+         TREE + GRAPH
+    ========================================== -->
+
+    <div class="top-section">
+
+
+        <!-- ================= TREE ================= -->
+
+        <div class="tree-card">
+
+            <div class="pink-title">
+
+                You Planted
+
+            </div>
+
+
+            <div class="tree-count">
+
+                0 Trees This Month
+
+            </div>
+
+
+            <div class="tree-area">
+
+                <p class="tree">
+                    🌱
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================= GRAPH ================= -->
+
+        <div class="graph-card">
+
+            <div class="graph-title">
+
+                <h2>
+                    Progress
+                </h2>
+
+            </div>
+
+
+            <div class="graph-container">
+
+                <canvas id="progressGraph"></canvas>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         PROGRESS SECTION
+    ========================================== -->
+
+    <div class="progress-row">
+
+
+        <!-- ================= OVERALL PERCENTAGE ================= -->
+
+        <div class="percentage-card">
+
+            <div class="pink-title">
+
+                Percentage Completed
+
+            </div>
+
+
+            <div class="percentage">
+
+                0%
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================= DAILY PERCENTAGES ================= -->
+
+        <div class="daily-percentage-card">
+
+            <div class="pink-title">
+
+                Daily Progress
+
+            </div>
+
+
+            <div class="daily-percentages">
+
+                <!--
+                    JavaScript will create
+                    the daily percentages here
+                -->
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         HABITS + DAILY TRACKER
+    ========================================== -->
+
+    <div class="main-tracker">
+
+
+        <!-- =====================================
+             DAILY HABITS
+        ====================================== -->
+
+        <div class="habits-card">
+
+
+            <div class="pink-title">
+
+                Daily Habits
+
+            </div>
+
+
+
+            <!-- ===============================
+                 ADD HABIT
+            ================================ -->
+
+            <div class="add-habit-area">
+
+
+                <input
+                    type="text"
+                    class="habit-input"
+                    placeholder="Enter a new habit..."
+                >
+
+
+                <button class="save-habit-button">
+
+                    Add
+
+                </button>
+
+
+            </div>
+
+
+
+            <!-- ===============================
+                 HABIT LIST
+            ================================ -->
+
+            <div class="habit-list">
+
+                <!--
+                    JavaScript will create
+                    habits here.
+
+                    Example:
+
+                    Wake up early
+                    Exercise
+                    Read a book
+                    Drink more water
+                -->
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =====================================
+             DAILY TRACKER
+        ====================================== -->
+
+        <div class="tracker-card">
+
+
+            <div class="pink-title">
+
+                Daily Tracker
+
+            </div>
+
+
+
+            <div class="table-container">
+
+
+                <table class="habit-table">
+
+
+                    <!-- =========================
+                         TABLE HEADER
+                    ========================== -->
+
+                    <thead>
+
+                        <tr>
+
+                            <!--
+                                JavaScript will create:
+
+                                Mon
+                                Tue
+                                Wed
+                                Thu
+                                Fri
+                                etc.
+                            -->
+
+                        </tr>
+
+                    </thead>
+
+
+
+                    <!-- =========================
+                         TABLE BODY
+                    ========================== -->
+
+                    <tbody>
+
+                        <!--
+                            JavaScript will create
+                            habit rows and checkboxes
+                        -->
+
+                    </tbody>
+
+
+                </table>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =========================================
+         YEAR NAVIGATION
+    ========================================== -->
+
+    <div class="year-card">
+
+
+        <button class="previous-year">
+
+            ◀
+
+        </button>
+
+
+        <span class="current-year">
+
+            2026
+
+        </span>
+
+
+        <button class="next-year">
+
+            ▶
+
+        </button>
+
+
+    </div>
+
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <div class="footer">
+
+        <p>
+
+            🌱 Small habits create big changes.
+
+        </p>
+
+    </div>
+
+
+</div>
+
+
+
+<!-- =========================================
+     JAVASCRIPT
+========================================== -->
+
+<script src="tracker.js"></script>
+
+
+</body>
+
+</html>

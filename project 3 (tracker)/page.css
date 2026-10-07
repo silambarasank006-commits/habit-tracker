@@ -1,0 +1,1053 @@
+/* =========================================
+   BASIC RESET
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff5fa;
+    color: #444;
+    padding: 30px;
+}
+
+
+/* =========================================
+   MAIN CONTAINER
+========================================= */
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+}
+
+
+/* =========================================
+   MONTH HEADER
+========================================= */
+
+.header {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+
+.month-navigation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+
+.current-month {
+    color: #c94f82;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+
+.month-navigation button {
+    border: none;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+
+    background-color: #df7eaa;
+    color: white;
+
+    font-size: 18px;
+    cursor: pointer;
+}
+
+
+.month-navigation button:hover {
+    background-color: #c94f82;
+}
+
+
+/* =========================================
+   TOP SECTION
+   TREE + GRAPH
+========================================= */
+
+.top-section {
+    display: grid;
+
+    grid-template-columns: 280px 1fr;
+
+    gap: 25px;
+
+    align-items: stretch;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   MAIN TREE CARD
+========================================= */
+
+.tree-card {
+    background-color: transparent;
+
+    min-height: 330px;
+
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   PINK TITLE
+========================================= */
+
+.pink-title {
+    background-color: #e9a3c4;
+
+    color: white;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    padding: 13px;
+
+    text-align: center;
+}
+
+
+/* =========================================
+   TREE COUNT
+========================================= */
+
+.tree-count {
+    background-color: #e9a3c4;
+
+    color: white;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    padding: 0 10px 15px;
+}
+
+
+/* =========================================
+   MAIN TREE AREA
+========================================= */
+
+.tree-area {
+    background-color: white;
+
+    flex: 1;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    min-height: 230px;
+
+    border: 1px solid #f0d8e4;
+}
+
+
+/* =========================================
+   MAIN TREE
+========================================= */
+
+.tree {
+    font-size: 100px;
+
+    margin: 0;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.tree:hover {
+    transform: scale(1.05);
+}
+
+
+/* =========================================
+   GRAPH CARD
+========================================= */
+
+.graph-card {
+    background-color: white;
+
+    border-radius: 12px;
+
+    min-height: 330px;
+
+    overflow: hidden;
+
+    border: 1px solid #f0d8e4;
+}
+
+
+.graph-title {
+    padding: 18px 20px 5px;
+}
+
+
+.graph-title h2 {
+    color: #333;
+
+    font-size: 22px;
+}
+
+
+.graph-container {
+    width: 100%;
+
+    height: 275px;
+
+    padding: 15px 20px 20px;
+}
+
+
+#progressGraph {
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+}
+
+
+/* =========================================
+   PROGRESS ROW
+========================================= */
+
+.progress-row {
+    display: grid;
+
+    grid-template-columns: 280px 1fr;
+
+    gap: 25px;
+
+    margin-bottom: 35px;
+}
+
+
+/* =========================================
+   OVERALL PERCENTAGE CARD
+========================================= */
+
+.percentage-card {
+    background-color: transparent;
+
+    min-height: 100px;
+}
+
+
+.percentage-card .pink-title {
+    font-size: 16px;
+
+    text-align: left;
+
+    padding-left: 15px;
+}
+
+
+.percentage {
+    background-color: transparent;
+
+    color: #c94f82;
+
+    font-size: 48px;
+
+    font-weight: bold;
+
+    padding: 10px 0 0 15px;
+}
+
+
+/* =========================================
+   DAILY PROGRESS CARD
+========================================= */
+
+.daily-percentage-card {
+    background-color: transparent;
+
+    min-height: 100px;
+}
+
+
+.daily-percentage-card .pink-title {
+    text-align: center;
+
+    font-size: 16px;
+}
+
+
+/* =========================================
+   DAILY CHERRY TREE CONTAINER
+========================================= */
+
+.daily-percentages {
+    display: flex;
+
+    align-items: flex-end;
+
+    gap: 10px;
+
+    overflow-x: auto;
+
+    min-height: 130px;
+
+    padding: 12px;
+
+    background-color: #fff7fb;
+
+    border: 1px solid #f0d8e4;
+
+    scroll-behavior: smooth;
+
+    /*
+       Makes scrolling nicer on phones
+    */
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* =========================================
+   EACH DAY'S TREE
+========================================= */
+
+.daily-tree {
+    flex: 0 0 70px;
+
+    min-width: 70px;
+
+    height: 105px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    padding: 5px;
+
+    border-radius: 10px;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.daily-tree:hover {
+    background-color: #ffeaf4;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================
+   TREE ICON AREA
+========================================= */
+
+.daily-tree-icon {
+    width: 65px;
+
+    height: 75px;
+
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: center;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.daily-tree-icon svg {
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+}
+
+
+/* =========================================
+   TREE HOVER
+========================================= */
+
+.daily-tree:hover .daily-tree-icon {
+    transform: scale(1.08);
+}
+
+
+/* =========================================
+   DAY NUMBER
+========================================= */
+
+.daily-tree-day {
+    margin-top: 4px;
+
+    font-size: 11px;
+
+    font-weight: bold;
+
+    color: #c94f82;
+}
+
+
+/* =========================================
+   TREE GROW ANIMATION
+========================================= */
+
+.tree-stage {
+    animation: treeGrow 0.4s ease;
+}
+
+
+@keyframes treeGrow {
+
+    from {
+        transform: scale(0.7);
+
+        opacity: 0.5;
+    }
+
+    to {
+        transform: scale(1);
+
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================
+   HABITS + TRACKER
+========================================= */
+
+.main-tracker {
+    display: grid;
+
+    grid-template-columns: 280px 1fr;
+
+    gap: 25px;
+
+    align-items: start;
+}
+
+
+/* =========================================
+   HABITS CARD
+========================================= */
+
+.habits-card {
+    background-color: white;
+
+    border: 1px solid #f0d8e4;
+
+    min-height: 500px;
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   ADD HABIT AREA
+========================================= */
+
+.add-habit-area {
+    display: flex;
+
+    gap: 6px;
+
+    padding: 12px;
+
+    background-color: #fff7fb;
+}
+
+
+/* =========================================
+   HABIT INPUT
+========================================= */
+
+.habit-input {
+    width: 100%;
+
+    min-width: 0;
+
+    padding: 9px;
+
+    border: 1px solid #e3bfd0;
+
+    border-radius: 6px;
+
+    outline: none;
+
+    font-size: 13px;
+}
+
+
+.habit-input:focus {
+    border-color: #d86b9d;
+}
+
+
+/* =========================================
+   ADD / UPDATE BUTTON
+========================================= */
+
+.save-habit-button {
+    border: none;
+
+    background-color: #d86b9d;
+
+    color: white;
+
+    padding: 8px 12px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    white-space: nowrap;
+}
+
+
+.save-habit-button:hover {
+    background-color: #c45789;
+}
+
+
+/* =========================================
+   HABIT LIST
+========================================= */
+
+.habit-list {
+    display: flex;
+
+    flex-direction: column;
+}
+
+
+/* =========================================
+   SINGLE HABIT
+========================================= */
+
+.habit-item {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    min-height: 38px;
+
+    padding: 8px 12px;
+
+    border-bottom: 1px solid #eeeeee;
+
+    background-color: white;
+}
+
+
+/* =========================================
+   HABIT NAME
+========================================= */
+
+.habit-name {
+    font-size: 14px;
+
+    color: #444;
+
+    word-break: break-word;
+
+    padding-right: 8px;
+}
+
+
+/* =========================================
+   HABIT ACTIONS
+========================================= */
+
+.habit-actions {
+    display: flex;
+
+    gap: 5px;
+
+    flex-shrink: 0;
+}
+
+
+.habit-actions button {
+    border: none;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    font-size: 14px;
+}
+
+
+.habit-actions button:hover {
+    transform: scale(1.15);
+}
+
+
+/* =========================================
+   TRACKER CARD
+========================================= */
+
+.tracker-card {
+    background-color: white;
+
+    border: 1px solid #f0d8e4;
+
+    overflow: hidden;
+
+    min-height: 500px;
+}
+
+
+/* =========================================
+   TABLE CONTAINER
+========================================= */
+
+.table-container {
+    width: 100%;
+
+    overflow-x: auto;
+
+    overflow-y: hidden;
+
+    -webkit-overflow-scrolling: touch;
+}
+
+
+/* =========================================
+   HABIT TABLE
+========================================= */
+
+.habit-table {
+
+    /*
+       Allows the table to become wider
+       than the screen.
+    */
+
+    width: max-content;
+
+    min-width: 100%;
+
+    border-collapse: separate;
+
+    border-spacing: 0;
+
+    table-layout: fixed;
+}
+
+
+/* =========================================
+   FIRST TABLE COLUMN
+   HABIT NAME
+========================================= */
+
+.habit-table th:first-child,
+.habit-table td:first-child {
+
+    width: 150px;
+
+    min-width: 150px;
+
+    max-width: 150px;
+}
+
+
+/* =========================================
+   DAILY COLUMNS
+========================================= */
+
+.habit-table th:not(:first-child),
+.habit-table td:not(:first-child) {
+
+    width: 65px;
+
+    min-width: 65px;
+
+    max-width: 65px;
+}
+
+
+/* =========================================
+   TABLE HEADER
+========================================= */
+
+.habit-table thead th {
+
+    background-color: #e9a3c4;
+
+    color: white;
+
+    padding: 9px 5px;
+
+    text-align: center;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    border-right: 1px solid #df9ab9;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================
+   WEEKDAY TEXT
+========================================= */
+
+.habit-table thead th div:first-child {
+
+    font-size: 12px;
+
+    margin-bottom: 3px;
+}
+
+
+/* =========================================
+   DATE TEXT
+========================================= */
+
+.habit-table thead th div:last-child {
+
+    font-size: 11px;
+
+    opacity: 0.9;
+}
+
+
+/* =========================================
+   TABLE CELLS
+========================================= */
+
+.habit-table td {
+
+    height: 45px;
+
+    padding: 5px;
+
+    text-align: center;
+
+    border-right: 1px solid #eeeeee;
+
+    border-bottom: 1px solid #eeeeee;
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   HABIT NAME CELL
+========================================= */
+
+.habit-table td:first-child {
+
+    text-align: left;
+
+    font-weight: normal;
+
+    padding-left: 12px;
+
+    color: #444;
+
+    background-color: white;
+
+    /*
+       Keeps habit names visible
+       while scrolling sideways.
+    */
+
+    position: sticky;
+
+    left: 0;
+
+    z-index: 2;
+}
+
+
+/* =========================================
+   FIRST HEADER STAYS ABOVE
+========================================= */
+
+.habit-table thead th:first-child {
+
+    position: sticky;
+
+    left: 0;
+
+    z-index: 4;
+}
+
+
+/* =========================================
+   CHECKBOX
+========================================= */
+
+.habit-table input[type="checkbox"] {
+
+    width: 18px;
+
+    height: 18px;
+
+    cursor: pointer;
+
+    accent-color: #d86b9d;
+}
+
+
+/* =========================================
+   YEAR NAVIGATION
+========================================= */
+
+.year-card {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 25px;
+
+    margin-top: 30px;
+
+    padding: 15px;
+}
+
+
+.year-card button {
+
+    border: none;
+
+    width: 38px;
+
+    height: 38px;
+
+    border-radius: 50%;
+
+    background-color: #df7eaa;
+
+    color: white;
+
+    cursor: pointer;
+
+    font-size: 15px;
+}
+
+
+.year-card button:hover {
+
+    background-color: #c94f82;
+}
+
+
+.current-year {
+
+    color: #c94f82;
+
+    font-size: 20px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.footer {
+
+    text-align: center;
+
+    color: #999;
+
+    padding: 20px;
+
+    font-size: 14px;
+}
+
+
+/* =========================================
+   TABLET RESPONSIVE
+========================================= */
+
+@media (max-width: 800px) {
+
+    body {
+        padding: 15px;
+    }
+
+
+    .current-month {
+        font-size: 28px;
+    }
+
+
+    .top-section {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .progress-row {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .main-tracker {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .tree-card {
+
+        min-height: 280px;
+    }
+
+
+    .graph-card {
+
+        min-height: 300px;
+    }
+
+
+    .graph-container {
+
+        height: 250px;
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+
+    body {
+
+        padding: 10px;
+    }
+
+
+    .month-navigation {
+
+        gap: 12px;
+    }
+
+
+    .current-month {
+
+        font-size: 22px;
+    }
+
+
+    .month-navigation button {
+
+        width: 35px;
+
+        height: 35px;
+
+        font-size: 14px;
+    }
+
+
+    .tree {
+
+        font-size: 75px;
+    }
+
+
+    .add-habit-area {
+
+        flex-direction: column;
+    }
+
+
+    .save-habit-button {
+
+        width: 100%;
+    }
+
+
+    /*
+       Daily trees
+    */
+
+    .daily-tree {
+
+        flex-basis: 65px;
+
+        min-width: 65px;
+    }
+
+
+    .daily-tree-icon {
+
+        width: 58px;
+
+        height: 70px;
+    }
+
+
+    /*
+       Keep tracker wide.
+
+       The user can swipe left/right
+       to see all days.
+    */
+
+    .habit-table {
+
+        min-width: 2200px;
+    }
+
+
+    .habit-table th:not(:first-child),
+    .habit-table td:not(:first-child) {
+
+        width: 65px;
+
+        min-width: 65px;
+
+        max-width: 65px;
+    }
+
+}
